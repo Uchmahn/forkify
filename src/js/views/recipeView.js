@@ -1,7 +1,7 @@
 import View from './View.js';
 // import icons from '../img/icons.svg'; // Parcel 1
 import icons from 'url:../../img/icons.svg'; // Parcel 2
-import { Fraction } from 'fractional'; // npm package used to convert any number(decimal) into fraction
+import fracty from 'fracty'; // npm package used to convert any number(decimal) into fraction
 class RecipeView extends View {
   _parentElement = document.querySelector('.recipe');
   _errorMessage = `We couldn't find that recipe, Please try another one!`;
@@ -136,7 +136,7 @@ class RecipeView extends View {
         <use href="${icons}#icon-check"></use>
       </svg>
       <div class="recipe__quantity">${
-        ing.quantity ? new Fraction(ing.quantity).toString() : ''
+        ing.quantity ? fracty(ing.quantity).toString() : ''
       }</div>
       <div class="recipe__description">
         <span class="recipe__unit">${ing.unit}</span>
