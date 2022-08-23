@@ -55,6 +55,18 @@
   }
 }
 
+.page {
+  color: $color-primary;
+  font-size: 1.3rem;
+  justify-content: center;
+  font-weight: 700;
+  display: flex;
+  background-color: white;
+  border: none;
+  border-radius: 10rem;
+  align-self: center;
+}
+
 .btn--inline {
   color: $color-primary;
   font-size: 1.3rem;
