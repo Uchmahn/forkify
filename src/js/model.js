@@ -12,6 +12,7 @@ export const state = {
     page: 1,
   },
   bookmarks: [],
+  validity: true,
 };
 
 const createRecipeObject = function (data) {
@@ -147,4 +148,16 @@ export const uploadRecipe = async function (newRecipe) {
   } catch (err) {
     throw err;
   }
+};
+
+export const formatCheck = function () {
+  document.querySelectorAll('.ingredients').forEach(input => {
+    if (
+      input.value !== '' &&
+      input.value.split(',').length !== 3 &&
+      typeof input.value.split(',')[0] !== 'number'
+    ) {
+      state.validity = false;
+    }
+  });
 };

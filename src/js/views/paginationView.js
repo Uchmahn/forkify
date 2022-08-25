@@ -71,11 +71,12 @@ class PaginationView extends View {
             </svg>
           </button>
       `;
+    } else {
+      return `     
+       <p class="page">${curPage}</p>
+      `;
     }
     // Page 1, and there are NO other pages
-    return `     
-     <p class="page">${curPage}</p>
-    `;
   }
 }
 
